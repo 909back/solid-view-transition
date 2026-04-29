@@ -1,0 +1,26 @@
+.page-wrapper {
+  height: 100%;
+  padding: 16px 16px;
+}
+
+.banner-section {
+  .banner1-title {
+    background: linear-gradient(92deg, var(--gray-12, #202020) 26.09%, var(--gray-10, #838383) 104.5%) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .banner1-image {
+    width: 300px;
+    top: -90px;
+    right: -32px;
+  }
+}
+
+.product-list {
+  display: grid;
+  padding: 24px 0;
+  gap: 4px;
+  grid-template-columns: repeat(2, 1fr);
+}

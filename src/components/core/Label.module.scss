@@ -1,0 +1,26 @@
+.wrapper {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 12px;
+  height: 28px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 300;
+
+  &.black {
+    &.solid {
+      color: var(--gray-1);
+      background-color: var(--gray-12);
+    }
+
+    &.outline {
+      color: var(--gray-12);
+      border: 1px solid var(--gray-12);
+      background-color: #fff;
+    }
+  }
+
+
+}

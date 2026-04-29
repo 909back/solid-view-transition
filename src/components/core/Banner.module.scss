@@ -1,0 +1,43 @@
+.banner {
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+
+  .banner-link {
+    position: absolute;
+    inset: 0;
+  }
+
+  .banner-image {
+    position: absolute;
+    z-index: 1;
+  }
+
+  .banner-info {
+    position: relative;
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 2;
+
+    .banner-info-inner {
+      .banner-title {
+        width: fit-content;
+        font-family: var(--font-brand);
+        font-size: 26px;
+        line-height: 1.2;
+        color: var(--gray-12);
+        white-space: pre;
+      }
+
+      .banner-description {
+        font-size: 12px;
+        color: var(--gray-9);
+        margin: 24px 0 0;
+      }
+    }
+  }
+}
