@@ -12,10 +12,22 @@ export const BANNER_1: Banner = {
 
 export const PRODUCTS: Product[] = [
   {
+    id: 1,
+    title: "Velvet Dress",
+    price: 850_000,
+    image: setImgURL('/model_woman_4.png'),
+    sizes: ['L', "M", "S", 'XS'],
+    imagePos: {
+      top: -90,
+    }
+
+  },
+  {
     id: 3,
     title: "Slacks",
     price: 1_280_000,
     image: setImgURL("/model_woman_2.png"),
+    sizes: ['L', "M", "S", 'XS'],
     imagePos: {
       top: -70,
     }
@@ -25,12 +37,14 @@ export const PRODUCTS: Product[] = [
     title: "Jackets",
     price: 1_450_000,
     image: setImgURL("/model_woman_2.png"),
+    sizes: ['L', "M", "S", 'XS'],
   },
   {
     id: 5,
     title: "Satin dress",
     price: 2_318_000,
     image: setImgURL("/model_woman_1.png"),
+    sizes: ['L', "M", "S", 'XS'],
     imagePos: {
       top: -109
     }
@@ -40,8 +54,11 @@ export const PRODUCTS: Product[] = [
     title: "Blazer set",
     price: 5_120_000,
     image: setImgURL("/model_man_2.png"),
+    sizes: ['L', "M", "S", 'XS'],
     imagePos: {
       top: -50,
     }
   },
 ]
+
+export const MAIN_PRODUCT_LIST: Product[] = PRODUCTS.slice(1)

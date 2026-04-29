@@ -8,10 +8,6 @@ interface LabelProps extends ParentProps {
   type?: "solid" | "outline",
   color?: "black"
 }
-export default function Label({
-  type = 'solid',
-  color = 'black',
-  children
-}: LabelProps) {
-  return <span class={cx('wrapper', type, color)}>{children}</span>
+export default function Label(props: LabelProps) {
+  return <span class={cx("wrapper", props.type ?? "solid", props.color ?? "black")}>{props.children}</span>
 }

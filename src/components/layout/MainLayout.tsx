@@ -8,7 +8,7 @@ interface MainLayoutProps {
 	children?: JSX.Element;
 }
 
-export default function MainLayout({ children }: MainLayoutProps) {
+export default function MainLayout(props: MainLayoutProps) {
 	return (
 		<div class={cx("wrapper")}>
 			<div class={cx("container")}>
@@ -18,7 +18,7 @@ export default function MainLayout({ children }: MainLayoutProps) {
 					</h1>
 				</header>
 				<main class={cx("main")}>
-					<div class={cx("main-inner")}>{children}</div>
+					<div class={cx("main-inner")}>{props.children}</div>
 				</main>
 			</div>
 		</div>

@@ -2,6 +2,7 @@ import styles from "./Banner.module.scss";
 import classNames from "classnames/bind";
 import { type Banner as BannerData } from "~/interface";
 import Label from "./Label";
+import Image from "./Image";
 
 const cx = classNames.bind(styles);
 
@@ -14,26 +15,17 @@ interface BannerProps extends BannerData {
 	classNames?: ClassNames;
 	image: string;
 }
-export default function Banner({
-	className,
-	classNames,
-	title,
-  backgroundColor,
-	description,
-	image,
-	price,
-  link,
-}: BannerProps) {
+export default function Banner(props: BannerProps) {
 	return (
-		<div style={{"background": backgroundColor }} class={cx(className, classNames?.root, "banner")}>
-      <img class={cx('banner-image', classNames?.image)} src={image} />
+		<div style={{ background: props.backgroundColor }} class={cx(props.className, props.classNames?.root, "banner")}>
+      <Image class={cx("banner-image", props.classNames?.image)} src={props.image} width={300} fetchpriority="high" loading="eager" />
 			<div class={cx("banner-info")}>
 				<div class={cx("banner-info-inner")}>
-					<h3 class={cx("banner-title", classNames?.title)}>{title}</h3>
-					<p class={cx("banner-description", classNames?.description)}>{description}</p>
+					<h3 class={cx("banner-title", props.classNames?.title)}>{props.title}</h3>
+					<p class={cx("banner-description", props.classNames?.description)}>{props.description}</p>
 				</div>
-				<Label>{price}</Label>
-        <a class={cx('banner-link')} href={link}></a>
+				<Label>{props.price}</Label>
+        <a class={cx("banner-link")} href={props.link}></a>
 			</div>
 		</div>
 	);

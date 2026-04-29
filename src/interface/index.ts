@@ -7,11 +7,16 @@ export interface Banner {
   link: string
 }
 
+export type Position = Partial<Record<'top' | 'right' | 'bottom' | 'left', number>>
+export type Size = 'L' | 'M' | 'S' | 'XS'
+
+
 export interface Product {
   id: number
   title: string
   price: number
   image: string
-  imagePos?: Partial<Record<'top' | 'right' | 'bottom' | 'left', number>>
+  imagePos?: Position
+  sizes?: Size[]
 }
 
