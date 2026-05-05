@@ -2,6 +2,7 @@ import type { Banner, Product } from "~/interface";
 import { setImgURL } from './functions'
 
 export const BANNER_1: Banner = {
+  productId: 1,
   title: "Elegance in\nEvery Move",
   description: "BOSS Collection 2026",
   backgroundColor: "linear-gradient(146deg, #E8E8E8 13.48%, #646464 101.2%)",

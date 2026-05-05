@@ -1,6 +1,7 @@
 import { type JSX } from "solid-js";
 import styles from "./MainLayout.module.scss";
 import classnames from "classnames/bind";
+import { useViewTransition } from "~/utils/useViewTransition";
 
 const cx = classnames.bind(styles);
 
@@ -9,6 +10,7 @@ interface MainLayoutProps {
 }
 
 export default function MainLayout(props: MainLayoutProps) {
+	// useViewTransition()
 	return (
 		<div class={cx("wrapper")}>
 			<div class={cx("container")}>

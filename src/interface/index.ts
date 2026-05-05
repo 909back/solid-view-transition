@@ -1,4 +1,5 @@
 export interface Banner {
+  productId: number
   title: string
   description: string
   backgroundColor?: string

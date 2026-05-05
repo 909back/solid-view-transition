@@ -13,9 +13,13 @@ import { useNavigate } from "@solidjs/router";
 const cx = classNames.bind(styles);
 
 function OrderButton() {
-	return <div class={cx('order-button-wrapper')}>
-		<Button size="L" fluid>Buy Now!</Button>
-	</div>
+	return (
+		<div class={cx("order-button-wrapper")}>
+			<Button size="L" fluid>
+				Buy Now!
+			</Button>
+		</div>
+	);
 }
 
 interface ProductSizeTabProps {
@@ -44,10 +48,17 @@ function ProductSizeTab(props: ProductSizeTabProps) {
 	);
 }
 
-function ProductThumbnail(props: { src: string; pos?: Position }) {
+function ProductThumbnail(props: {
+	viewTransitionName: string;
+	src: string;
+	pos?: Position;
+}) {
 	const navigate = useNavigate();
 	return (
-		<section class={cx("thumbnail")}>
+		<section
+			style={{"view-transition-name": props.viewTransitionName}}
+			class={cx("thumbnail")}
+		>
 			<div class={cx("thumbnail-inner")}>
 				<Image
 					class={cx("thumbnail-image")}
@@ -74,7 +85,11 @@ export default function ProductDetail() {
 			<Show when={product()}>
 				{(data) => (
 					<>
-						<ProductThumbnail src={data().image} pos={data().imagePos} />
+						<ProductThumbnail
+							viewTransitionName={`product-${data().id}`}
+							src={data().image}
+							pos={data().imagePos}
+						/>
 						<article class={cx("information")}>
 							<header class={cx("information-header")}>
 								<h2 class={cx("product-title")}>{data().title}</h2>
