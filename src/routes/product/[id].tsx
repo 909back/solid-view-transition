@@ -9,6 +9,7 @@ import Button from "~/components/core/Button";
 import Image from "~/components/core/Image";
 import IconArrowLeft from "~/components/icons/ic-arrow-left";
 import { useNavigate } from "@solidjs/router";
+import { Title } from "@solidjs/meta";
 
 const cx = classNames.bind(styles);
 
@@ -85,6 +86,7 @@ export default function ProductDetail() {
 			<Show when={product()}>
 				{(data) => (
 					<>
+						<Title>BOSS | {data().title}</Title>
 						<ProductThumbnail
 							viewTransitionName={`product-${data().id}`}
 							src={data().image}

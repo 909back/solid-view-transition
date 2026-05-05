@@ -1,0 +1,13 @@
+.container {
+  height: 100%;
+  padding: 56px 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  h1 { margin: 0 0 24px; }
+  a {
+    color: var(--gray-9);
+    text-decoration: underline;
+  }
+}
