@@ -4,15 +4,19 @@ import { solidStart } from "@solidjs/start/config";
 import path from "path";
 
 export default defineConfig({
-  plugins: [
-    solidStart(),
-    nitro({
-      preset: "cloudflare_pages",
-    }),
-  ],
-  resolve: {
-    alias: {
-      "~": path.resolve(__dirname, "src"),
-    },
-  },
+	plugins: [
+		solidStart(),
+		nitro({
+			preset: "cloudflare_pages",
+			cloudflare: {
+				deployConfig: true,
+				nodeCompat: true,
+			},
+		}),
+	],
+	resolve: {
+		alias: {
+			"~": path.resolve(__dirname, "src"),
+		},
+	},
 });
