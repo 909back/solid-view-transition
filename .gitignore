@@ -78,6 +78,11 @@ web_modules/
 .next
 out
 
+
+# SolidJS build output
+.nitro
+.output
+
 # Nuxt.js build / generate output
 .nuxt
 dist
