@@ -1,3 +1,3 @@
 # solid-view-transition
 
-<img width="81" height="164" alt="solid-viewtransition" src="https://github.com/user-attachments/assets/b12fd278-d227-4514-9854-ec9760d29ac6" />
+<img width="284" height="576" alt="solid-viewtransition-ezgif com-resize" src="https://github.com/user-attachments/assets/631cb71c-3ab6-4645-9dde-51c495f6bb56" />
