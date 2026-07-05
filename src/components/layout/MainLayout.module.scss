@@ -42,5 +42,8 @@
   flex-direction: column;
   position: relative;
 
-  .main-inner { flex: 1 0 auto; }
+  .main-inner {
+    flex: 1 0 auto;
+    view-transition-name: main-area;
+  }
 }

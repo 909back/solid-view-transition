@@ -13,7 +13,10 @@ a {
   text-decoration: none;
 }
 
-a, button { cursor: pointer; }
+a,
+button {
+  cursor: pointer;
+}
 
 html {
   height: 100vh;
@@ -47,8 +50,4 @@ img {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gray-8);
-}
-
-@view-transition {
-  navigation: auto;
 }

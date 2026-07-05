@@ -1,0 +1,61 @@
+/**
+ * root는 겹침/깜빡임 방지용 crossfade만.
+ * 실제 슬라이드는 main-area, 카드 이동은 product-* morph가 담당한다.
+ */
+::view-transition-old(root) {
+  animation: fade-out 300ms ease-in forwards;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 300ms ease-out forwards;
+}
+
+
+/**
+ * MainLayout의 main-inner 영역만 옆으로 슬라이드.
+ * old는 왼쪽으로 빠지고, new는 오른쪽에서 들어온다.
+ */
+::view-transition-old(main-area) {
+  animation: slide-out-left 500ms ease-in forwards;
+}
+
+::view-transition-new(main-area) {
+  animation: slide-in-right 500ms ease-out forwards;
+}
+
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-out-left {
+  from {
+    translate: 0 0;
+    opacity: 1;
+  }
+
+  to {
+    translate: -100% 0;
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    translate: 100% 0;
+    opacity: 0;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}

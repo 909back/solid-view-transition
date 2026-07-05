@@ -4,6 +4,7 @@ import { type Banner as BannerData } from "~/interface";
 import Label from "./Label";
 import Image from "./Image";
 import { useNavigateViewTransition } from "~/utils/useViewTransition";
+import { getProduct } from "~/utils/apiHooks";
 
 const cx = classNames.bind(styles);
 
@@ -48,7 +49,9 @@ export default function Banner(props: BannerProps) {
 					href={props.link}
 					onClick={(e) => {
 						e.preventDefault();
-						navigate(props.link);
+						navigate(props.link, {
+							prepare: () => getProduct(props.productId),
+						});
 					}}
 				></a>
 			</div>

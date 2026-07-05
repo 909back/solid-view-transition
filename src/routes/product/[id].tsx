@@ -1,8 +1,9 @@
 import styles from "./[id].module.scss";
 import classNames from "classnames/bind";
 import { useParams } from "@solidjs/router";
+import type { RoutePreloadFuncArgs } from "@solidjs/router";
 import { Suspense, Show, createSignal, For } from "solid-js";
-import { useProduct } from "~/utils/apiHooks";
+import { getProduct, useProduct } from "~/utils/apiHooks";
 import type { Position, Size } from "~/interface";
 import { posToStyle } from "~/utils/functions";
 import Button from "~/components/core/Button";
@@ -77,9 +78,14 @@ function ProductThumbnail(props: {
 	);
 }
 
+export function preload({ params }: RoutePreloadFuncArgs) {
+	// 라우터가 링크 hover/클릭 시 미리 실행 → 상세 진입 시 캐시에서 즉시 렌더된다.
+	void getProduct(Number(params.id) || 0);
+}
+
 export default function ProductDetail() {
 	const params = useParams();
-	const [product] = useProduct(Number(params.id) || 0);
+	const product = useProduct(Number(params.id) || 0);
 
 	return (
 		<Suspense>

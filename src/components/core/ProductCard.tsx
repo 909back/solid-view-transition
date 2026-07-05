@@ -4,6 +4,7 @@ import classNames from "classnames/bind";
 import { posToStyle } from "~/utils/functions";
 import Image from "./Image";
 import { useNavigateViewTransition } from "~/utils/useViewTransition";
+import { getProduct } from "~/utils/apiHooks";
 
 const cx = classNames.bind(styles);
 
@@ -34,7 +35,8 @@ export default function ProductCard(props: ProductCardProps) {
 				href={href}
 				onClick={(e) => {
 					e.preventDefault();
-					navigate(href);
+					// 전환 전에 상세 데이터를 확보 → 썸네일이 스냅샷에 존재해 morph 성립.
+					navigate(href, { prepare: () => getProduct(props.data.id) });
 				}}
 			/>
 		</article>

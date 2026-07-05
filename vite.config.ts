@@ -6,13 +6,7 @@ import path from "path";
 export default defineConfig({
 	plugins: [
 		solidStart(),
-		nitro({
-			preset: "cloudflare_pages",
-			cloudflare: {
-				deployConfig: true,
-				nodeCompat: true,
-			},
-		}),
+		nitro(),
 	],
 	resolve: {
 		alias: {
